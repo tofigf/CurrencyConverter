@@ -21,6 +21,9 @@ namespace CurrencyConverter.Infrastructure.Services
 
         public async Task<ExchangeResult> ConvertAsync(decimal amount, string fromCurrency, string toCurrency)
         {
+            if (amount <= 0)
+                throw new ArgumentException("Amount must be greater than zero.", nameof(amount));
+
             var now = DateTime.UtcNow;
             var cached = await _dbContext.CurrencyRates.FirstOrDefaultAsync(x =>
                 x.FromCurrency == fromCurrency && x.ToCurrency == toCurrency &&
@@ -34,9 +37,24 @@ namespace CurrencyConverter.Infrastructure.Services
             }
             else
             {
-                var url = $"https://api.exchangerate.host/convert?from={fromCurrency}&to={toCurrency}";
+                var url = $"https://api.exchangerate.host/convert?access_key=1190350fbf8bed773c728bbfa7b352d5&from={fromCurrency}&to={toCurrency}&amount={amount}";
+
                 var response = await _http.GetFromJsonAsync<JsonElement>(url);
-                rate = response.GetProperty("info").GetProperty("rate").GetDecimal();
+
+                Console.WriteLine("API response: " + response.ToString()); // Debug
+
+                if (response.TryGetProperty("info", out var info) && info.TryGetProperty("rate", out var rateElement))
+                {
+                    rate = rateElement.GetDecimal();
+                }
+                else if (response.TryGetProperty("result", out var resultElement) && amount != 0)
+                {
+                    rate = resultElement.GetDecimal() / amount;
+                }
+                else
+                {
+                    throw new InvalidOperationException("Unable to parse rate from exchange API response.");
+                }
 
                 _dbContext.CurrencyRates.Add(new CurrencyRate
                 {

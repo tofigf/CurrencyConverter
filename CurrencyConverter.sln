@@ -5,6 +5,16 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Core", "CurrencyConverter.Core\CurrencyConverter.Core.csproj", "{D0CAA5E7-F8CE-4FEA-819C-6D450F1D2171}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Infrastructure", "CurrencyConverter.Infrastructure\CurrencyConverter.Infrastructure.csproj", "{5CB10A2F-1BAE-4B82-B731-339EE328824D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.ConsoleApp", "CurrencyConverter.ConsoleApp\CurrencyConverter.ConsoleApp.csproj", "{F23C59EF-7D2C-450E-BC71-054AFA188129}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.RestApi", "CurrencyConverter.RestApi\CurrencyConverter.RestApi.csproj", "{31225FF9-0C2D-407A-A54F-AAC892E401C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Clients", "CurrencyConverter.Clients\CurrencyConverter.Clients.csproj", "{17E4C06D-BF2D-434D-BBFC-5B2B88F79F37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.GrpcService", "CurrencyConverter.GrpcService\CurrencyConverter.GrpcService.csproj", "{5E0C0FE5-7112-492E-A8B3-DC470305C2DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{D0CAA5E7-F8CE-4FEA-819C-6D450F1D2171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0CAA5E7-F8CE-4FEA-819C-6D450F1D2171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0CAA5E7-F8CE-4FEA-819C-6D450F1D2171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CB10A2F-1BAE-4B82-B731-339EE328824D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CB10A2F-1BAE-4B82-B731-339EE328824D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CB10A2F-1BAE-4B82-B731-339EE328824D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CB10A2F-1BAE-4B82-B731-339EE328824D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F23C59EF-7D2C-450E-BC71-054AFA188129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F23C59EF-7D2C-450E-BC71-054AFA188129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F23C59EF-7D2C-450E-BC71-054AFA188129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F23C59EF-7D2C-450E-BC71-054AFA188129}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31225FF9-0C2D-407A-A54F-AAC892E401C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31225FF9-0C2D-407A-A54F-AAC892E401C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31225FF9-0C2D-407A-A54F-AAC892E401C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31225FF9-0C2D-407A-A54F-AAC892E401C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17E4C06D-BF2D-434D-BBFC-5B2B88F79F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E4C06D-BF2D-434D-BBFC-5B2B88F79F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E4C06D-BF2D-434D-BBFC-5B2B88F79F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E4C06D-BF2D-434D-BBFC-5B2B88F79F37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E0C0FE5-7112-492E-A8B3-DC470305C2DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E0C0FE5-7112-492E-A8B3-DC470305C2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E0C0FE5-7112-492E-A8B3-DC470305C2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E0C0FE5-7112-492E-A8B3-DC470305C2DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

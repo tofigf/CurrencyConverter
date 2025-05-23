@@ -4,16 +4,19 @@ using Microsoft.EntityFrameworkCore;
 using CurrencyConverter.Infrastructure.Data;
 using CurrencyConverter.Core.Interfaces;
 using CurrencyConverter.Infrastructure.Services;
+using System.Globalization;
 
 class Program
 {
     static async Task Main(string[] args)
     {
+        Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+        Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
         using var host = Host.CreateDefaultBuilder(args)
             .ConfigureServices((context, services) =>
             {
                 services.AddDbContext<AppDbContext>(opt =>
-                    opt.UseNpgsql("Host=localhost;Port=5432;Database=currency_db;Username=postgres;Password=yourpassword"));
+                    opt.UseNpgsql("Host=localhost;Port=5432;Database=currencyConverterDB;Username=postgres"));
 
                 services.AddHttpClient();
                 services.AddScoped<IExchangeService, ExchangeService>();

@@ -20,11 +20,6 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 app.MapControllers();
-app.MapPost("/convert", async (decimal amount, string from, string to, IExchangeService service) =>
-{
-    var result = await service.ConvertAsync(amount, from, to);
-    return Results.Ok(result);
-});
 
 if (app.Environment.IsDevelopment())
 {

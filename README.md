@@ -21,8 +21,6 @@ It was created as a test task to demonstrate clean architecture, gRPC usage, and
 The gRPC service defines a `Convert` method using Protobuf and allows clients to request conversions with high performance.
 
 ```proto
-rpc Convert (ConvertRequest) returns (ConvertReply);
-
 dotnet ef migrations add InitialCreate --project CurrencyConverter.Infrastructure --startup-project CurrencyConverter.RestApi
 dotnet ef database update --project CurrencyConverter.Infrastructure --startup-project CurrencyConverter.RestApi
 
